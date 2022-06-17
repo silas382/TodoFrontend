@@ -1,5 +1,5 @@
 import './App.css';
-import ItemList from './Components/ItemlList';
+import TodoList from './Components/TodoList';
 
 const DUMMY_DATA = [
   {
@@ -20,7 +20,7 @@ const DUMMY_DATA = [
 
 function App(props) {
   return (
-    <ItemList items={DUMMY_DATA}/>
+    <TodoList />
   );
 }
 
