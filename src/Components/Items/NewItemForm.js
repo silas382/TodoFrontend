@@ -15,6 +15,7 @@ function NewItemForm() {
                 <label htmlFor="description">
                     Todo description
                     <input type="text" required description="description"/>
+                    <textarea id='description' required rows='5'/>
                 </label>
             </div>
         </form>

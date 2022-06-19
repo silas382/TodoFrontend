@@ -1,11 +1,25 @@
 import Item from "./Item";
 import NewItemForm from "./NewItemForm";
-
+import { Link } from 'react-router-dom';
+import {Routes, Route, Switch, useNavigate} from 'react-router-dom';
 import classes from "./TodoList.module.css";
 
 function TodoList () {
+
+  // const navigate = useNavigate();
+  // const navigateToNewItemForm = () => {
+  //   // 👇️ navigate to /contacts
+  //   navigate('/NewItemForm');
+  // };
+
+
+
   function handleClick(event){
-    
+    return (
+    <div>
+      <Link to='/NewItemForm'>All Meetups</Link>
+    </div>
+    );
   }
   // const DUMMY_DATA = [
   //   {
@@ -32,8 +46,7 @@ function TodoList () {
         // </ul>
         <section>
           <Item description='I suck at coding'></Item>
-          {/* <button className={classes.button} onClick={handleClick}></button> */}
-          <NewItemForm/>
+          <button className={classes.button} onClick={handleClick}> Add an Item </button>
         </section>
       );
 }
