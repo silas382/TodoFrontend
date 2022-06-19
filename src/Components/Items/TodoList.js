@@ -6,21 +6,6 @@ import classes from "./TodoList.module.css";
 
 function TodoList () {
 
-  // const navigate = useNavigate();
-  // const navigateToNewItemForm = () => {
-  //   // 👇️ navigate to /contacts
-  //   navigate('/NewItemForm');
-  // };
-
-
-
-  function handleClick(event){
-    return (
-    <div>
-      <Link to='/NewItemForm'>All Meetups</Link>
-    </div>
-    );
-  }
   // const DUMMY_DATA = [
   //   {
   //     item_id: 123,
@@ -46,7 +31,6 @@ function TodoList () {
         // </ul>
         <section>
           <Item description='I suck at coding'></Item>
-          <button className={classes.button} onClick={handleClick}> Add an Item </button>
         </section>
       );
 }
