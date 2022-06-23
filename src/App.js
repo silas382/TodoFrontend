@@ -9,7 +9,27 @@ import {
   Link
 } from "react-router-dom";
 
+import axios from 'axios';
+
 function App() {
+  // http request done here using fetch
+
+  
+
+  function addToDoHandler(todoData){
+      fetch(
+        'http://http://localhost:5432',
+        {
+        method: 'POST',//get would be default'
+        body: JSON.stringify(todoData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+        }
+
+      );
+
+  }
 
   return (
   <div>
@@ -17,7 +37,7 @@ function App() {
     <Link to='/AddToDoForm'>Add New Todo</Link>
     <Switch>
       <Route path='/AddToDoForm'> 
-        <NewItemForm/>
+        <NewItemForm onAddTodo={addToDoHandler}/>
       </Route>
     </Switch>
   </div>
