@@ -5,7 +5,20 @@ import {Routes, Route, Switch, useNavigate} from 'react-router-dom';
 import classes from "./TodoList.module.css";
 
 function TodoList () {
+    
+  let toDos = [];
+  
+    fetch('http://localhost:8080/todolist')
+    .then(response => response.json())
+    .then(data => {
+      toDos = data;
+      console.log("working");
+      console.log(toDos);
+    }
+      );
 
+  
+  
   // const DUMMY_DATA = [
   //   {
   //     item_id: 123,
