@@ -12,9 +12,20 @@ import {
 import axios from 'axios';
 
 function App() {
-  // http request done here using fetch
 
+  const [actvityName, setActivityName] = useState("");
+  const [deadline, setDeadline] = useState("");
+  const [description, setDescription] = useState("");
   
+  let res = await fetch("https://localhost:8080/todolist", {
+  method: "POST",
+  body: JSON.stringify({
+    activityName: activityName,
+    deadline: deadline,
+    description: description,
+  }),
+});
+
 
   function addToDoHandler(todoData){
       fetch(

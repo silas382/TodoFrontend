@@ -4,6 +4,30 @@ import classes from '../ui/Card.module.css';
 
 function NewItemForm(props) {
 
+    // let handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //       let res = await fetch("https://localhost:8080/todolist", {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //           activityName: activityName,
+    //           deadline: deadline,
+    //           description: description,
+    //         }),
+    //       });
+    //       let resJson = await res.json();
+    //       if (res.status === 200) {
+    //         setActivityName("");
+    //         setDeadline("");
+    //         setDescription("New todo created successfully");
+    //       } else {
+    //         setMessage("Error creating Todo!");
+    //       }
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
+
     const titleInputRef = useRef();
     const descriptionInputRef = useRef();
     const deadlineInputRef = useRef();
