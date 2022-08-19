@@ -4,7 +4,7 @@ import classes from '../ui/Card.module.css';
 import  { useState } from 'react';
 
 function NewItemForm(props) {
-  const [activityName, setActivityName] = useState("");
+  const [title, setTitleName] = useState("");
   const [deadline, setDeadline] = useState("");
   const [description, setDescription] = useState("");
 
@@ -12,21 +12,21 @@ function NewItemForm(props) {
         e.preventDefault();
         try {
           let res = await fetch("http://localhost:8080/addtodo", {
-            mode: 'no-cors',
+            mode: 'cors',
             method: "POST",
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              activityName: activityName,
+              title: title,
               deadline: deadline,
               description: description,
             }),
           });
           //let resJson = await res.json();
-          if (res.status != 200) {
-            console.log("Error creating Todo!");
+          if (res.status != 201) { 
+            console.log("res status " + res.status);
           }
         } catch (err) {
           console.log(err);
@@ -63,7 +63,7 @@ function NewItemForm(props) {
             <div className={classes.control}>
                 <label htmlFor="title">
                     Activity/Todo
-                    <input type="text" value ={activityName} required description="title"  onChange={(e) => setActivityName(e.target.value)} ref={titleInputRef}/>
+                    <input type="text" value ={title} required description="title"  onChange={(e) => setTitleName(e.target.value)} ref={titleInputRef}/>
                 </label>
             </div>
             <div className = {classes.control}>

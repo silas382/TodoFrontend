@@ -15,14 +15,15 @@ class TodoList extends React.Component  {
   componentDidMount() {
   
 
-    fetch('http://localhost:8080/todolist')
+    fetch('http://localhost:8080/todolist', {mode: 'cors'} )
+  
     .then(response => response.json())
     .then(data => {
       this.setState({todos: data});
       console.log("working");
       console.log(data);
     }
-      );
+    );
   }
   
    
